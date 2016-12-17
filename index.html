@@ -1,9 +1,43 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
 <head>
-    <title>This is my course era title</title>
+    <meta charset="utf-8" />
+    <style>        body { font-size:1.5em; 
+        }
+    </style>
+    <title>Coursera - AngularJS</title>
+
+
+
+
+    <script src="Scripts/angular.min.js"></script>
+   
+    <script  src="app.js"></script>
 </head>
 <body>
-    <p>This is a demo page</p>
+
+        <h1>Low Cohesion and Tight Coupling</h1>
+        <div id="nameCalculator">
+            <div>
+                Your name: <input type="text" id="name" /> 
+            </div>
+            <div id="output"></div>
+        </div>
+
+
+
+    <!-- This is a peace of view is bind to the controller-->
+    <div ng-controller="NameCalculateController">
+
+        Your name:<input type="text" ng-model="name" ng-keyup="displayNumeric()" />
+        <p>Total Numeric value of person's name {{total}}</p>
+
+        <button ng-click="feedAamir()">Feed Aamir</button>
+        <br />
+        <img ng-src="images/aamir_{{stateOfBeing}}.png" />
+
+    </div>
+
+
 </body>
 </html>

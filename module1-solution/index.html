@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <title>Module 1 Coding Assignment - Single Page Web Application with AngularJS</title>
+    <link href="styles/styles.css" type="text/css" rel="stylesheet" />
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+
+
+</head>
+<body>
+
+
+    <div ng-controller="LunchController">
+        
+        
+        <input type="text" ng-model="list" />
+         <!--We do NOT consider and empty item, i.e., , ,. -->
+        <br />
+        <span class=" message {{class}}">{{message}}</span>
+        <br />
+        <button ng-click="checkTooMuch()">Check If Too Much</button>
+
+
+    </div>
+
+
+</body>
+</html>

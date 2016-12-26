@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Restaurant Menu Search - Coursera Single Page Application.</title>
+    <link href="styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+    
+</head>
+<body ng-app="NarrowItDownApp">
+
+   <main>
+       <h1>Restaurant Menu Search</h1>
+       <div class="row" ng-controller="NarrowItDownController as menu">
+
+           <div class="col-sm-12">
+               <div class="search">
+                   <input class="form-control" ng-model="menu.search" type="text" placeholder="Search Menu" />
+                   <button class="btn"   ng-click="menu.getMatchedMenuItem();">SEARCH</button>
+               </div>
+
+            
+               <found-items items="menu.items" remove="menu.removeMenuItem(index)" message=" {{menu.message}}"></found-items>
+             
+           </div>
+       </div>
+   </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <!--<script src="scripts/angular.min.js"></script>-->
+    <script src="scripts/app.js"></script>
+</body>
+</html>

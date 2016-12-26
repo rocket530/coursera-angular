@@ -1,0 +1,12 @@
+﻿<ol class="list">
+    
+    <li class="message" ng-show="!menu.items.length">{{ menu.message }}</li>
+    <li ng-repeat="dish in menu.items">
+        <b>{{dish.name}}</b>
+        <p>{{dish.description}}</p>
+        <b>Price: </b><span ng-show="dish.small_portion_name">({{dish.small_portion_name}})</span><span ng-show="dish.price_small"> {{dish.price_small | currency:"USD$":0}} </span>
+        <span ng-show="dish.large_portion_name">({{dish.large_portion_name}})</span> <span ng-show="dish.price_large"> {{dish.price_large | currency:"USD$":0}}</span>
+
+        <button class="btn" ng-click="menu.remove({index: $index})">Don't want this one!</button>
+    </li>
+</ol>

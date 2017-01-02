@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Restaurant Menu Search - Coursera Single Page Application.</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body ng-app="RestaurantApp">
+    <main>
+        <h1>Welcome to our Restaurant Website!</h1>
+        <nav>
+            <ul>
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="categories">Categories</a></li>
+            </ul>
+        </nav>
+       
+        <div class="main-image">
+            <spinner></spinner>
+            <ui-view></ui-view>
+        </div>
+    </main>
+
+
+
+    <!-- Lib for the app -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- First step is to create our module!!!-->
+    <script src="src/restaurantapp.module.js"></script>
+
+    <!-- Next Step is to create our Service -->
+    <script src="src/restaurantapp.service.js"></script>
+
+    <!-- Our Service is ready lets create our first Controller -->
+    <script src="src/restaurantapp.controller.js"></script>
+    
+    <!-- Its time to update the html and create our component -->
+    <script src="src/restaurantapp.component.js"></script>
+
+    <!-- Its time to give our route some direction-->
+    <script src="src/restaurantapp.routes.js"></script>
+</body>
+</html>

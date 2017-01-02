@@ -1,0 +1,9 @@
+﻿<div ng-if="!$ctrl.showSpinner">
+
+    <div class="heading">Select from categories below:</div>
+    <ul class="categories">
+        <li ng-repeat="item in $ctrl.items"><a ui-sref="items( { id: item.short_name }  )">{{item.name}}</a></li>
+    </ul>
+
+</div>
+

@@ -1,0 +1,12 @@
+﻿<div class="heading">Your selected category: {{ctrl.categoryName}}</div>
+
+    <div class="btn"><a ui-sref="categories">Back </a></div>
+
+
+<ul class="menu">
+    <li ng-repeat="item in ctrl.items">
+        <b>{{item.name}}</b>
+        <p>{{item.description}}</p>
+        
+    </li>
+</ul>

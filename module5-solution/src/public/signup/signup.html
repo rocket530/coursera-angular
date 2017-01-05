@@ -1,0 +1,139 @@
+﻿<div class="container" ng-controller="SignupController as ctrl">
+
+    <div class="row"  ng-hide="ctrl.formFilled">
+        <h2 class="head">Sign Up for our Newsletter</h2>
+
+
+        <form name="ctrl.signup" class="form-horizontal" novalidate>
+
+            <div class="form-group">
+
+                <div class="col-sm-6">
+                    <label>First Name: </label>
+                    <input type="text" class="form-control" required name="firstName" placeholder="Enter your first name"
+                           ng-model="ctrl.user.firstname" ng-minlength="4" ng-maxlength="10" />
+                </div>
+                <div class="col-sm-6">
+                    <span class="error" ng-if="(ctrl.signup.firstName.$error.minlength || ctrl.signup.firstName.$error.maxlength ||
+                         ctrl.signup.firstName.$error.required) &&
+                         ctrl.signup.firstName.$touched">
+
+                        First Name must be atleast 4 character long and not more than 10 character.
+                    </span>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <label>Last Name: </label>
+                    <input type="text" ng-model="ctrl.user.lastname" class="form-control" required name="lastName" placeholder="Enter your last name" />
+                </div>
+                <div class="col-sm-6">
+                    <span class="error" ng-if="(ctrl.signup.lastName.$error.required) && ctrl.signup.lastName.$touched">
+                        Last Name required.
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-6">
+
+                    <label>Email Address: </label>
+                    <input type="email" ng-model="ctrl.user.email" class="form-control" required name="email" placeholder="Enter your email addresss" />
+
+
+                </div>
+                <div class="col-sm-6">
+                    <span class="error"  ng-if="(ctrl.signup.email.$error.email || ctrl.signup.email.$error.required) &&
+                         ctrl.signup.email.$touched">
+                        Email address must in correct form "xyz@hotmail.com"and required.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <label>Phone: </label>
+                    <input type="text" class="form-control" ng-model="ctrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required name="phone" placeholder="###-###-####" />
+
+
+                </div>
+                <div class="col-sm-6">
+                    <span class="error" ng-if="(ctrl.signup.phone.$error.pattern || ctrl.signup.phone.$error.required) &&
+                         ctrl.signup.phone.$touched">
+                        Phone is required and must in correct format "###-###-####".
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="form-group">
+
+
+                <div class="col-sm-6">
+                    <label>Menu number of your favourite dish: </label>
+                    <input type="text" class="form-control" ng-model="ctrl.user.menuNumber"
+                           ng-minlength="2" ng-maxlength="3" ng-change="ctrl.checkMenuItem(ctrl.user.menuNumber);"
+                           required name="menuNumber" placeholder="Enter menu code" />
+
+
+                </div>
+                <div class="col-sm-6">
+                    <span class="error" ng-if="(ctrl.signup.menuNumber.$error.required)  &&
+                         ctrl.signup.menuNumber.$touched">
+                        No such menu number exists
+                    </span>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="form-group">
+
+                <div class="col-sm-6">
+                    <button ng-click="ctrl.saveUser(ctrl.user);" ng-disabled="ctrl.signup.$invalid" class="btn">Submit</button>
+                </div>
+
+
+
+            </div>
+
+        </form>
+
+
+
+
+    </div>
+
+    <div class="row" ng-show="ctrl.formFilled">
+        <h2>Thankyou for subscribing to our Newsletter</h2>
+        <div class="message">Your information has been saved</div>
+
+    </div>
+    
+
+</div>

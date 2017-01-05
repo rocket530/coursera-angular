@@ -1,0 +1,46 @@
+﻿
+<div class="container">
+    <div class="row" ng-show="ctrl.user.formFilled">
+        <h2 class="text-center head">My Info</h2>
+       
+        
+        <div class="col-sm-8">
+            First Name: {{ ctrl.user.firstname }}
+        </div>
+        <div class="col-sm-8">
+            Last Name: {{ ctrl.user.lastname }}
+        </div>
+        <div class="col-sm-8">
+            Email: {{ ctrl.user.email }}
+        </div>
+        <div class="col-sm-8">
+            Phone: {{ ctrl.user.phone }}
+        </div>
+
+        <div class="col-sm-8">
+            <h2>Your Menu:</h2>
+            <div>{{ctrl.user.menuItem.name }}</div>
+            <div>{{ctrl.user.menuItem.description }}</div>
+            <div>{{ctrl.user.menuItem.name }}</div>
+            <div><img class="img-responsive" width="250" height="150" ng-src="{{ctrl.basePath}}/images/{{ctrl.user.menuItem.short_name}}.jpg" alt="{{ctrl.user.menuItem.name}}">
+                        
+            </div>
+        </div>
+
+
+       
+    </div>
+    
+    <div class="row" ng-hide="ctrl.user.formFilled">
+
+        <h2>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h2>
+
+    </div>
+    
+
+
+
+</div>
+
+  
+
